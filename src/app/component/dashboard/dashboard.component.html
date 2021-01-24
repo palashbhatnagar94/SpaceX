@@ -1,0 +1,10 @@
+<div class="dashboard-container">
+    <h1>SpaceX Launch Programs</h1>
+    <div class="programs">        
+        <app-filter (getProgramsWithFilters)="getProgramsWithFilter($event)"></app-filter>
+        <app-cards [cardArr]="programList"></app-cards>
+    </div>
+    <!-- <footer>Developed By: Palash Bhatnagar</footer> -->
+</div>
+
+<div [ngClass]="{'overlay': loader}"></div>

@@ -1,0 +1,29 @@
+<div class="cards-container">
+    <div *ngIf="cardArr">
+        <div *ngFor="let card of cardArr; let i=index" class="program-card">
+                <img [src]="card.links.mission_patch_small" [alt]="card.mission_name">
+                <div class="mission-name">{{card.mission_name}} #{{card.flight_number}}</div>
+                <div class="mission-ids">                    
+                    <label><b>Mission Ids:</b></label>
+                    <ng-container *ngIf="card.mission_id.length > 0">
+                        <li *ngFor="let m_id of card.mission_id" class="blue-font">
+                            {{ m_id }}
+                        </li>
+                    </ng-container>
+                    <ng-container *ngIf="card.mission_id.length === 0">
+                        <li class="blue-font">Info N/A</li>
+                    </ng-container>
+                </div>
+                <div class="launch-year">                    
+                    <label><b>Launch Year:</b></label><span class="blue-font">{{ card.launch_year}}</span>
+                </div>
+                <div class="launch-success">
+                    <label><b>Successful Launch:</b></label><span class="blue-font">{{ card.launch_success }}</span>
+                </div>
+                <div class="launch-landing">
+                    <label><b>Successful Landing:</b></label><span class="blue-font">{{ card.launch_landing ? 'Yes' : 'N/A' }}</span>
+                </div>
+            </div>
+    </div>
+    <div *ngIf="cardArr && cardArr.length === 0" class="no-data-found">No Program was running for applied filter. Try with different filters</div>
+</div>

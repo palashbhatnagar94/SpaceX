@@ -1,0 +1,26 @@
+<div class="filter-container">
+    <h2>Filters</h2>
+    <div class="filter-by-year">
+        <span>Launch Year</span>
+        <hr>        
+        <div *ngFor="let year of filterYear; let i=index" class="filter-layout"  [ngClass]="{'right-margin': i % 2 === 1}">
+            <button type="button" class="filter-btn" (click)="applyYear(i)" [ngClass]="{'selectedFilterBtn': i===selectedYear}">{{ year }}</button>
+        </div>
+    </div>
+    <div class="filter-by-launch">
+        <span>Successful Launch</span>
+        <hr>        
+        <div class="filter-layout">
+            <button type="button" class="filter-btn" (click)="applyLaunch(1)" [ngClass]="{'selectedFilterBtn': isSuccessfulLaunch === 1}">True</button>
+            <button type="button" class="filter-btn" (click)="applyLaunch(0)" [ngClass]="{'selectedFilterBtn': isSuccessfulLaunch === 0}">False</button>
+        </div>
+    </div>
+    <div class="filter-by-landing">
+        <span>Successful Landing</span>
+        <hr>        
+        <div class="filter-layout">
+            <button type="button" class="filter-btn" (click)="applyLand(1)" [ngClass]="{'selectedFilterBtn': isSuccesfulLanding===1}">True</button>
+            <button type="button" class="filter-btn" (click)="applyLand(0)" [ngClass]="{'selectedFilterBtn': isSuccesfulLanding===0}">False</button>
+        </div>
+    </div>
+</div>
