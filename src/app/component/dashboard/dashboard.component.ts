@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FilterOption } from '../../model/program.model';
+import { FilterOption, Programs } from '../../model/program.model';
 import { ProgramService } from '../../service/program.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { ProgramService } from '../../service/program.service';
 })
 export class DashboardComponent implements OnInit {
 
-  programList: any;
+  programList: Programs[];
   loader = true;
 
   constructor(public programService: ProgramService) { }

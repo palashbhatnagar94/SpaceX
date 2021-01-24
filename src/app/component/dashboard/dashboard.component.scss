@@ -18,10 +18,13 @@
     cursor: pointer;
   }
 
-@media screen and (min-width: 700px) {  
+  footer {
+      text-align: center;
+  }
 
+@media screen and (min-width: 700px) {
     .programs {
-        display: flex
+        display: flex;
     }
 }
 
@@ -32,6 +35,6 @@
         align-self: center;
     }
     .programs {
-        display: flex
+        display: flex;
     }
 }
