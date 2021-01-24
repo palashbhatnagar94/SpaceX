@@ -25,6 +25,10 @@ export class DashboardComponent implements OnInit {
   }
 
   getProgramsWithFilter(filters: FilterOption) {
+    if(filters.year > 0 && (!filters.land || !filters.launch)) {
+      alert('To apply year select land and launch as true. You can also select Launch as true only or with land true');
+      return;
+    }
     console.log('filters', filters);    
     this.loader = true;
     this.programService.getProgramWithFilters(filters).subscribe(res => {
